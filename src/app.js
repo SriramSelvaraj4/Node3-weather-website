@@ -3,7 +3,7 @@ const geoCode = require('./utils/Geocode')
 const foreCast = require('./utils/Forecast')
 const path = require('path')
 const hbs = require('hbs')
-const port = 3000
+const port = process.env.PORT || 3000
 
 const app = express()
 
@@ -85,14 +85,11 @@ app.get('/weather',(req, res)=>{
   }
 })
 
-
 app.get('*',(req,res)=>{
   res.render('404',{
     footer:"hello"
   })
 })
-
-
 
 app.listen(port, ()=>{
   console.log('this server is running in', port)
