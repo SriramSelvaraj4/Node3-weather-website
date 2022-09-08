@@ -9,7 +9,7 @@ const foreCast = (latitude, longitude, callback) => {
           callback('unable to fetch weather for this location at this time', undefined)
         }
       else{
-          callback(undefined, body.current.weather_descriptions[0] + `. It is currently ${body.current.temperature} degrees out. Thers is ${body.current.feelslike}% chance of rain.`)
+          callback(undefined, body.current.weather_descriptions[0] + `. It is currently ${body.current.temperature} degrees out. The High today is ${body.current.humidity} There is ${body.current.feelslike}% chance of rain.`)
       }
   })
 }
